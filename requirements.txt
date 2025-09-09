@@ -1,0 +1,45 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.21.0
+opencv-python>=4.8.0
+Pillow>=9.0.0
+requests>=2.28.0
+
+# 3D processing
+open3d>=0.18.0
+trimesh>=3.20.0
+scipy>=1.9.0
+
+# RoMa for rotation conversions
+roma
+
+# SDF calculations now handled directly by Open3D
+
+# API clients
+replicate>=0.15.0
+openai>=1.0.0
+
+# MoGe depth estimation
+# Note: Install MoGe following https://github.com/microsoft/MoGe
+# pip install git+https://github.com/microsoft/MoGe.git
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.64.0
+matplotlib>=3.6.0
+imageio>=2.25.0
+
+# Optional: for advanced features
+scikit-learn>=1.2.0
+networkx>=3.0
+graphviz>=0.20.0
+
+dashscope 
+pyrender==0.1.45
+pyglet==1.5.31
+bpy>=3.6.0  # Blender Python API
+
+fake-bpy-module
+aiohttp
+ipdb 
