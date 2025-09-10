@@ -40,7 +40,7 @@ class CASTPipeline:
                  mesh_provider: Literal["tripo3d", "trellis"] = "trellis",
                  mesh_base_url: Optional[str] = None,
                  generation_provider: Literal["replicate", "qwen"] = "qwen", 
-                 pose_estimation_backend: Literal["icp", "pytorch"] = "pytorch",
+                 pose_estimation_backend: Literal["icp", "pytorch"] = "icp",
                  enable_render_and_compare: bool = False,
                  enable_scene_graph_opt: bool = False, 
                  debug: bool = False):
@@ -642,6 +642,7 @@ def create_pipeline(output_dir: Optional[str] = None,
                    mesh_provider: Literal["tripo3d", "trellis"] = "trellis",
                    mesh_base_url: Optional[str] = None,
                    generation_provider: Literal["replicate", "qwen"] = "replicate", 
+                   pose_estimation_backend: Literal["icp", "pytorch"] = "icp",
                    debug: bool = False) -> CASTPipeline:
     """
     Factory function to create a CAST pipeline
@@ -659,6 +660,7 @@ def create_pipeline(output_dir: Optional[str] = None,
                            mesh_provider=mesh_provider,
                            mesh_base_url=mesh_base_url,
                            generation_provider=generation_provider,
+                           pose_estimation_backend=pose_estimation_backend,
                            debug=debug)
     
     # Validate setup

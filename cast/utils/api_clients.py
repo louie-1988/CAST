@@ -214,7 +214,8 @@ class Tripo3DClient:
             "file": {
                 "type": "png",
                 "file_token": file_token
-            }
+            }, 
+            "model_version": "v3.0-20250812", 
         }
         
         try:

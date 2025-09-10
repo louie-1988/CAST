@@ -76,22 +76,6 @@ def setup_environment():
     else:
         print("✗ No .env.example file found")
 
-def create_directories():
-    """Create necessary directories"""
-    print("\n" + "="*50)
-    print("CREATING DIRECTORIES")
-    print("="*50)
-    
-    directories = [
-        "outputs",
-        "temp",
-        "models"
-    ]
-    
-    for dir_name in directories:
-        path = Path(dir_name)
-        path.mkdir(exist_ok=True)
-        print(f"✓ Created directory: {dir_name}")
 
 def validate_installation():
     """Validate the installation"""
@@ -165,8 +149,6 @@ def main():
     # Setup environment
     setup_environment()
     
-    # Create directories
-    create_directories()
     
     # Validate installation
     validate_installation()

@@ -492,7 +492,8 @@ class PoseEstimationModule:
             print("  Normalizing point clouds...")
             source_norm, source_norm_info = self.normalize_point_cloud(source_pcd)
             target_norm, target_norm_info = self.normalize_point_cloud(target_pcd)
-            self._vis_pcd(source_norm, target_norm, np.eye(4))
+            if self.debug:
+                self._vis_pcd(source_norm, target_norm, np.eye(4))
             print(f"  Source normalization - Center: {source_norm_info['center']}, Scale: {source_norm_info['scale']:.3f}")
             print(f"  Target normalization - Center: {target_norm_info['center']}, Scale: {target_norm_info['scale']:.3f}")
 
@@ -722,7 +723,8 @@ class PoseEstimationModule:
             forward_weight, backward_weight,
             learning_rate, num_iterations
         )
-        self._vis_pcd(mesh_points, scene_points, transformation)
+        if self.debug:
+            self._vis_pcd(mesh_points, scene_points, transformation)
         
         # Step 4: Extract pose components from transformation matrix
         translation, rotation_matrix, scale = self._decompose_transformation_matrix(transformation)

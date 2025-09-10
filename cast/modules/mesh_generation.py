@@ -86,7 +86,7 @@ class MeshGenerationModule:
             
             # Step 4: Download the mesh
             if "result" in result and "pbr_model" in result["result"]:
-                model_url = result["result"]["pbr_model"]
+                model_url = result["result"]["pbr_model"]["url"]
                 print(f"  Downloading mesh from: {model_url}")
                 
                 # Create output path

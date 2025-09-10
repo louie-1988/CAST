@@ -19,18 +19,6 @@ class APIConfig:
         self.tripo3d_key = os.getenv("TRIPO3D_API_KEY")
         self.dashscope_key = os.getenv("DASHSCOPE_API_KEY")
 
-@dataclass
-class PathConfig:
-    """Path configuration settings"""
-    output_dir: Path = Path("./output")
-    temp_dir: Path = Path("./temp")
-    model_cache_dir: Path = Path("./models")
-    
-    def __post_init__(self):
-        # Create directories if they don't exist
-        self.output_dir.mkdir(exist_ok=True, parents=True)
-        self.temp_dir.mkdir(exist_ok=True, parents=True)
-        self.model_cache_dir.mkdir(exist_ok=True, parents=True)
 
 @dataclass
 class ModelConfig:
@@ -67,7 +55,6 @@ class Config:
     """Main configuration class"""
     def __init__(self):
         self.api = APIConfig()
-        self.paths = PathConfig()
         self.models = ModelConfig()
         self.processing = ProcessingConfig()
         
@@ -81,7 +68,7 @@ class Config:
         
         missing_keys = [key for key in required_keys if key is None]
         if missing_keys:
-            print(f"Warning: Missing API keys. Please set environment variables.")
+            print("Warning: Missing API keys. Please set environment variables.")
             return False
         return True
 

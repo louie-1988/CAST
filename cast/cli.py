@@ -122,6 +122,14 @@ Examples:
     )
     
     parser.add_argument(
+        "--mesh-provider",
+        type=str,
+        choices=["tripo3d", "trellis"],
+        default="trellis",
+        help="Mesh provider (default: trellis)"
+    )
+
+    parser.add_argument(
         "--mesh-base-url",
         type=str,
         # default="http://192.168.31.42:8080",
@@ -134,8 +142,8 @@ Examples:
         "--pose-estimation-backend",
         type=str,
         choices=["icp", "pytorch"],
-        default="pytorch",
-        help="Pose estimation backend (default: pytorch)"
+        default="icp",
+        help="Pose estimation backend (default: icp)"
     )
 
     parser.add_argument(
@@ -149,8 +157,10 @@ Examples:
     # Create pipeline
     try:
         pipeline = create_pipeline(output_dir=args.output, 
+                                  mesh_provider=args.mesh_provider,
                                   generation_provider=args.generation_provider,
                                   mesh_base_url=args.mesh_base_url,
+                                  pose_estimation_backend=args.pose_estimation_backend,
                                   debug=args.debug)
     except Exception as e:
         print(f"Error creating pipeline: {e}")
@@ -172,7 +182,6 @@ Examples:
                 save_intermediates=not args.no_intermediates,
                 resume=not args.no_resume,
                 num_max_objects=args.num_max_objects,
-                # pose_estimation_backend=args.pose_estimation_backend,
                 enable_generation=args.enable_generation,
                 generation_threshold=args.generation_threshold,
                 discard_threshold=args.discard_threshold
@@ -203,7 +212,6 @@ Examples:
             results = pipeline.run_batch(
                 image_paths=image_files,
                 base_output_dir=Path(args.output),
-                # pose_estimation_backend=args.pose_estimation_backend,
                 enable_generation=args.enable_generation,
                 generation_threshold=args.generation_threshold,
                 discard_threshold=args.discard_threshold
